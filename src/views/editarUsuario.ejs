@@ -1,0 +1,27 @@
+<% include partes/header %>
+
+
+<div class="col-md-5">
+        <div class="card">
+            <div class="card-body">
+                <form action="/editarUsuario/<%= selectUsuario._id %>" method="POST">
+                    <div class="form-group">
+                            <input type="text" name="cedula" placeholder="Ingrese la cedula" class="form-control mb-3" value="<%= selectUsuario.cedula %>">
+                            <input type="text" name="nombre" placeholder="Ingrese el nombre" class="form-control mb-3" value="<%= selectUsuario.nombre %>">
+                            <input type="text" name="apellido" placeholder="Ingrese el apellido" class="form-control mb-3" value="<%= selectUsuario.apellido %>">
+                            <input type="text" name="correo" placeholder="Ingrese el correo" class="form-control mb-3" value="<%= selectUsuario.correo %>">
+                            <input type="text" name="numeroTelefonico" placeholder="Ingrese el numero de telefono" class="form-control mb-3" value="<%= selectUsuario.numeroTelefonico %>">
+                    </div>
+                        <button type="submit" class="btn btn-success btn-block">
+                            Editar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+
+<% include partes/footer %>

@@ -1,0 +1,65 @@
+<% include partes/header %>
+
+    <div class="container-md-5">
+        <div class="col-md-5 bg-secondary">
+            <p class="font-weight-bold text-white p-3">Registro de Usuarios</a>
+        </div>
+        <div class="row">
+            <!-- Formulario -->
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/AgregarUsuario" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="cedula" placeholder="Ingrese la cedula" class="form-control mb-3">
+                                <input type="text" name="nombre" placeholder="Ingrese el nombre" class="form-control mb-3">
+                                <input type="text" name="apellido" placeholder="Ingrese el apellido" class="form-control mb-3">
+                                <input type="text" name="correo" placeholder="Ingrese el correo" class="form-control mb-3">
+                                <input type="text" name="numeroTelefonico" placeholder="Ingrese el numero de telefono" class="form-control mb-3">
+                            </div>
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    Agregar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Lista -->
+            <div class="col-mb-10">
+                    <div class="col md-5 mt-5 bg-info">
+                        <p class=" p-3 font-weight-bold text-white">Vehiculos registrados</a>
+                    </div>
+                <table class="table table-boarder table-hover">
+                    <thead>
+                        <tr>
+                            <th>Cedula</th>                
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Numero Telefonico</th>
+                            <th>Funciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0 ; i < Usuarios.length ; i++) { %>
+                            <tr>
+                                <td><%= Usuarios[i].cedula %></td>
+                                <td><%= Usuarios[i].nombre %></td>
+                                <td><%= Usuarios[i].apellido %></td>
+                                <td><%= Usuarios[i].correo %></td>
+                                <td><%= Usuarios[i].numeroTelefonico %></td>
+                                <td>
+                                    <a href="/editarUsuario/<%= Usuarios[i]._id %>" class="btn btn-outline-primary">Editar</a>
+                                    <a href="/eliminarUsuario/<%= Usuarios[i]._id %>" class="btn btn-outline-danger">Eliminar</a>
+                                </td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>    
+
+<% include partes/footer %>

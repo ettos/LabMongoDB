@@ -1,0 +1,36 @@
+<% include partes/header %>
+
+
+<div class="col-md-5">
+        <div class="card">
+            <div class="card-body">
+                <form action="/editarVehiculo/<%= selectVehiculo._id %>" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="placa" placeholder="Ingrese la placa" class="form-control mb-3" value="<%= selectVehiculo.placa %>">
+                        <input type="text" name="capacidad" placeholder="Ingrese la capacidad" class="form-control mb-3" value="<%= selectVehiculo.capacidad %>">
+                        <input type="text" name="idMarca" placeholder="Ingrese la marca" class="form-control mb-3" value="<%= selectVehiculo.idMarca %>">
+                        <input type="text" name="idEstilo" placeholder="Ingrese el estilo" class="form-control mb-3" value="<%= selectVehiculo.idEstilo %>">
+                        <input type="text" name="modelo" placeholder="Ingrese el modelo" class="form-control mb-3" value="<%= selectVehiculo.modelo%>">
+                        <input type="text" name="color" placeholder="Ingrese el color del vehiculo" class="form-control mb-3" value="<%= selectVehiculo.color %>">
+                        <input type="text" name="cilindrada" placeholder="Ingrese la cilindrada" class="form-control mb-3" value="<%= selectVehiculo.cilindrada %>">
+                        <input type="text" name="combustible" placeholder="Ingrese el combustible" class="form-control mb-3" value="<%= selectVehiculo.combustible %>">
+                        <input type="text" name="transmision" placeholder="Ingrese la transmision" class="form-control mb-3" value="<%= selectVehiculo.transmision %>">
+                        <input type="text" name="año" placeholder="Ingrese el año" class="form-control mb-3" value="<%= selectVehiculo.año %>">
+                        <input type="text" name="extras" placeholder="Ingrese los extras" class="form-control mb-3" value="<%= selectVehiculo.extras %>" >
+                        <input type="text" name="pasajeros" placeholder="Cantidad de pasajeros" class="form-control mb-3" value="<%= selectVehiculo.pasajeros %>">
+                        <input type="text" name="precio" placeholder="Precio de renta" class="form-control mb-3" value="<%= selectVehiculo.precio %>">
+                        <input type="text" name="estado" placeholder="Estado del vehiculo" class="form-control mb-3" value="<%= selectVehiculo.estado %>">
+                    </div>
+                        <button type="submit" class="btn btn-success btn-block">
+                            Editar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+
+<% include partes/footer %>

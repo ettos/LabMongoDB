@@ -1,0 +1,92 @@
+<% include partes/header %>
+
+    <div class="container-md-5">
+        <div class="col-md-5 bg-secondary">
+            <p class="font-weight-bold text-white p-3">Registro de Vehiculos</a>
+        </div>
+        <div class="row">
+            <!-- Formulario -->
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/AgregarVehiculo" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="placa" placeholder="Ingrese la placa" class="form-control mb-3">
+                                <input type="text" name="capacidad" placeholder="Ingrese la capacidad" class="form-control mb-3">
+                                <input type="text" name="idMarca" placeholder="Ingrese la marca" class="form-control mb-3">
+                                <input type="text" name="idEstilo" placeholder="Ingrese el estilo" class="form-control mb-3">
+                                <input type="text" name="modelo" placeholder="Ingrese el modelo" class="form-control mb-3">
+                                <input type="text" name="color" placeholder="Ingrese el color del vehiculo" class="form-control mb-3">
+                                <input type="text" name="cilindrada" placeholder="Ingrese la cilindrada" class="form-control mb-3">
+                                <input type="text" name="combustible" placeholder="Ingrese el combustible" class="form-control mb-3">
+                                <input type="text" name="transmision" placeholder="Ingrese la transmision" class="form-control mb-3">
+                                <input type="text" name="año" placeholder="Ingrese el año" class="form-control mb-3">
+                                <input type="text" name="extras" placeholder="Ingrese los extras" class="form-control mb-3">
+                                <input type="text" name="pasajeros" placeholder="Cantidad de pasajeros" class="form-control mb-3">
+                                <input type="text" name="precio" placeholder="Precio de renta" class="form-control mb-3">
+                                <input type="text" name="estado" placeholder="Estado del vehiculo" class="form-control mb-3">
+                            </div>
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    Agregar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Lista -->
+            <div class="col-mb-10">
+                    <div class="col md-5 mt-5 bg-info">
+                        <p class=" p-3 font-weight-bold text-white">Vehiculos registrados</a>
+                    </div>
+                <table class="table table-boarder table-hover">
+                    <thead>
+                        <tr>
+                            <th>Placa</th>                
+                            <th>Capacidad</th>
+                            <th>Marca</th>
+                            <th>Estilo</th>
+                            <th>Modelo</th>
+                            <th>Color</th>
+                            <th>Cilindrada</th>
+                            <th>Combustible</th>
+                            <th>Transmision</th>
+                            <th>Año</th>
+                            <th>Extras</th>
+                            <th>Pasajeros</th>
+                            <th>Precio</th>
+                            <th>Estado</th>
+                            <th>Funciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0 ; i < Vehiculos.length ; i++) { %>
+                            <tr>
+                                <td><%= Vehiculos[i].placa %></td>
+                                <td><%= Vehiculos[i].capacidad %></td>
+                                <td><%= Vehiculos[i].idMarca %></td>
+                                <td><%= Vehiculos[i].idEstilo %></td>
+                                <td><%= Vehiculos[i].modelo %></td>
+                                <td><%= Vehiculos[i].color %></td>
+                                <td><%= Vehiculos[i].cilindrada %></td>
+                                <td><%= Vehiculos[i].combustible %></td>
+                                <td><%= Vehiculos[i].transmision %></td>
+                                <td><%= Vehiculos[i].año %></td>
+                                <td><%= Vehiculos[i].extras %></td>
+                                <td><%= Vehiculos[i].pasajeros %></td>
+                                <td><%= Vehiculos[i].precio %></td>
+                                <td><%= Vehiculos[i].estado %></td>
+                                <td>
+                                    <a href="/editarVehiculo/<%= Vehiculos[i]._id %>" class="btn btn-outline-primary mb-2">Editar</a>
+                                    <a href="/eliminarVehiculo/<%= Vehiculos[i]._id %>" class="btn btn-outline-danger">Eliminar</a>
+                                </td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>    
+
+<% include partes/footer %>

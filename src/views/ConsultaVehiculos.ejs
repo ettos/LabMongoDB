@@ -1,0 +1,96 @@
+<% include partes/header %>
+
+<div class="container">
+    <form action="/BuscarVehiculo" method="POST">
+    <div class="row">
+        <div class="card ml-2 p-2 mb-2">
+            <p class="text-center font-weight-bold">Buscar por placa</a>
+            <div class="form-group">
+                <input type="text" name="iPlaca" placeholder="Busqueda" class="form-control">
+            </div>
+        </div>
+        <div class="card ml-2 p-2 mb-2">
+            <p class="text-center font-weight-bold">Buscar por marca</a>
+            <div class="form-group">
+                <input type="text" name="iMarca" placeholder="Busqueda" class="form-control">
+            </div>
+        </div>
+        <div class="card ml-2 p-2 mb-2">
+            <p class="text-center font-weight-bold">Buscar por modelo</a>
+            <div class="form-group">
+                <input type="text" name="iCilindrada" placeholder="Busqueda" class="form-control">
+            </div>
+        </div>
+        <div class="card ml-2 p-2 mb-2">
+            <p class="text-center font-weight-bold">Buscar por precio</a>
+            <div class="input-group-prepend">
+                    <input type="text" name="ipreciom" placeholder="Precio Menor" class="form-control mr-2">
+                    <input type="text" name="iprecioM" placeholder="Precio Mayor" class="form-control">
+                </div>
+        </div>
+        <div class="card ml-2 p-2 mb-2">
+            <p class="text-center font-weight-bold">Buscar por cilindrada</a>
+            <div class="form-group">
+                <input type="text" name="iDilindrada" placeholder="Busqueda" class="form-control">
+            </div>
+        </div>
+        <div class="card ml-2 p-2 mb-2">
+            <p class="text-center font-weight-bold">Buscar por año</a>
+            <div class="form-group">
+                <input type="text" name="iAño" placeholder="Busqueda" class="form-control">
+            </div>
+        </div>
+        <button  type="Bbutton" class="btn btn-primary btn-lg btn-block">Buscar</button>
+    </div>
+    </form>
+</div>
+
+
+<div class="col-mb-10">
+        <div class="col md-5 mt-5 bg-info">
+            <p class=" p-3 font-weight-bold text-white">Vehiculos</a>
+        </div>
+    <table class="table table-boarder table-hover">
+        <thead>
+            <tr>
+                <th>Placa</th>                
+                <th>Capacidad</th>
+                <th>Marca</th>
+                <th>Estilo</th>
+                <th>Modelo</th>
+                <th>Color</th>
+                <th>Cilindrada</th>
+                <th>Combustible</th>
+                <th>Transmision</th>
+                <th>Año</th>
+                <th>Extras</th>
+                <th>Pasajeros</th>
+                <th>Precio</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i = 0 ; i < Vehiculos.length ; i++) { %>
+                <tr>
+                    <td><%= Vehiculos[i].placa %></td>
+                    <td><%= Vehiculos[i].capacidad %></td>
+                    <td><%= Vehiculos[i].idMarca %></td>
+                    <td><%= Vehiculos[i].idEstilo %></td>
+                    <td><%= Vehiculos[i].modelo %></td>
+                    <td><%= Vehiculos[i].color %></td>
+                    <td><%= Vehiculos[i].cilindrada %></td>
+                    <td><%= Vehiculos[i].combustible %></td>
+                    <td><%= Vehiculos[i].transmision %></td>
+                    <td><%= Vehiculos[i].año %></td>
+                    <td><%= Vehiculos[i].extras %></td>
+                    <td><%= Vehiculos[i].pasajeros %></td>
+                    <td><%= Vehiculos[i].precio %></td>
+                    <td><%= Vehiculos[i].estado %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
+
+
+<% include partes/footer %>

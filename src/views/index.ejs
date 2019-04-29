@@ -1,0 +1,32 @@
+<% include partes/header %>
+
+<div class="col-md-5">
+    <div class="card ">
+        <div>
+            <p class="text-center font-weight-bold p-3">Gestion de datos</a>
+        </div>
+        <form action="/RegistrarVehiculos" method="POST">
+            <button type="submit" class="btn btn-dark btn-lg btn-block">Vehiculos</button>
+        </form>
+        <form class="mt-2" action="/RegistrarUsuarios" method="POST">
+            <button type="submit" class="btn btn-dark btn-lg btn-block">Usuarios</button>
+        </form>
+    </div>
+
+    <div class="card mt-5">
+        <div>
+            <p class="text-center font-weight-bold p-3">Consultas</a>
+        </div>
+        <form action="/ConsultarVehiculos" method="POST">
+            <button type="submit" class="btn btn-dark btn-lg btn-block">Consultar Vehiculos</button>
+        </form>
+    </div>
+    
+</div>
+
+    
+
+
+
+
+<% include partes/footer %>
